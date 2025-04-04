@@ -28,6 +28,7 @@ REST_API_PLUGIN_VERSION = __version__
 
 # Getting configurations from airflow.cfg file
 AIRFLOW_WEBSERVER_BASE_URL = conf.get("webserver", "BASE_URL")
+AIRFLOW_OPENMETADATA_DAGS_FOLDER = conf.get("openmetadata_airflow_dags", "OPENMETADATA_DAGS_FOLDER")
 AIRFLOW_DAGS_FOLDER = conf.get("core", "DAGS_FOLDER")
 # Path to store the JSON configurations we receive via REST
 DAG_GENERATED_CONFIGS = conf.get(
@@ -35,3 +36,6 @@ DAG_GENERATED_CONFIGS = conf.get(
     "DAG_GENERATED_CONFIGS",
     fallback=f"{os.environ['AIRFLOW_HOME']}/dag_generated_configs",
 )
+
+if AIRFLOW_OPENMETADATA_DAGS_FOLDER:
+    AIRFLOW_DAGS_FOLDER = AIRFLOW_OPENMETADATA_DAGS_FOLDER
