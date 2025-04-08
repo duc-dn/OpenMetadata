@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 # We will keep handling dependencies in setup.py
 # since it helps us organize and isolate version management
 [project]
-name = "openmetadata_managed_apis"
+name = "openmetadata-managed-apis"
 version = "1.6.6.0"
 readme = "README.md"
 authors = [
